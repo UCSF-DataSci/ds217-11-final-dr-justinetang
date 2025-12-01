@@ -1,0 +1,27 @@
+feature,importance
+temp_category_Warm,0.4889813
+temp_category_Hot,0.35504138
+temp_category_Cool,0.13249657
+Wet Bulb Temperature,0.007176183
+month,0.0047908924
+Battery Life,0.0024004397
+Humidity,0.0013988293
+year,0.001172759
+Station Name_Foster Weather Station,0.0009998255
+Barometric Pressure,0.0008798284
+pressure_rolling_7h,0.0008797991
+Wind Direction,0.00064176094
+humidity_rolling_7h,0.0006375219
+Total Rain,0.0006044806
+Station Name_Oak Street Weather Station,0.00047874
+Heading,0.00032124514
+solar_rolling_24h,0.00029010448
+day_of_week,0.00022142878
+Solar Radiation,0.0002039432
+Maximum Wind Speed,0.0001877292
+Wind Speed,0.000111874244
+hour,8.336689e-05
+Precipitation Type,0.0
+is_weekend,0.0
+Interval Rain,0.0
+Rain Intensity,0.0

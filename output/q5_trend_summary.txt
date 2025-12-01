@@ -1,0 +1,17 @@
+KEY PATTERNS IDENTIFIED
+======================
+
+TEMPORAL TRENDS:
+- Air and wet bulb temperatures show clear seasonal patterns
+- Monthly air temp range: -2.6°C to 23.6°C
+- Monthly wet bulb temp range: -0.8°C to 18.9°C
+
+DAILY PATTERNS:
+- Air temperature shows diurnal cycle (warmer during day, cooler at night)
+- Peak air temp typically at hour 16
+- Minimum air temp typically at hour 6
+
+CORRELATIONS:
+- Air Temperature vs Wet Bulb Temperature: 0.828
+- Air Temperature vs Total Rain: 0.366
+- Air Temperature vs month: 0.276

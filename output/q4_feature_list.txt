@@ -1,0 +1,6 @@
+temp_difference
+temp_ratio
+humidity_rolling_7h
+pressure_rolling_7h
+solar_rolling_24h
+temp_category

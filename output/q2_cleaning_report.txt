@@ -1,0 +1,19 @@
+DATA CLEANING REPORT
+====================
+Rows before cleaning: 195873
+Missing Data Handling: Forward-fill applied to all columns
+Outlier Handling:
+- Rain Intensity: 6842 outliers capped at [0.0, 0.0]
+- Interval Rain: 15798 outliers capped at [0.0, 0.0]
+- Total Rain: 4566 outliers capped at [-499.1000000000001, 702.1000000000001]
+- Precipitation Type: 13609 outliers capped at [0.0, 0.0]
+- Wind Speed: 2574 outliers capped at [-3.4999999999999996, 8.399999999999999]
+- Maximum Wind Speed: 220 outliers capped at [-10.8, 17.2]
+- Barometric Pressure: 106 outliers capped at [965.0000000000001, 1023.8]
+- Solar Radiation: 17195 outliers capped at [-393.0, 524.0]
+- Heading: 41186 outliers capped at [333.0, 375.0]
+- Battery Life: 6 outliers capped at [2.3000000000000025, 24.699999999999996]
+Duplicates Removed: 0
+Data Type Conversions:
+- Measurement Timestamp: converted to datetime64[ns]
+Rows after cleaning: 195873

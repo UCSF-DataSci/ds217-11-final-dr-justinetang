@@ -1,0 +1,19 @@
+KEY FINDINGS SUMMARY
+===================
+
+MODEL PERFORMANCE:
+- Best performing model: XGBoost (R² = 0.9791)
+- Linear Regression: R² = 0.9108578624092413, RMSE = 3.0163274116191796, MAE = 2.313895765804928
+- Random Forest: R² = NaN, RMSE = NaN, MAE = NaN
+- XGBoost: R² = 0.9790551437845334, RMSE = 1.4620951971656215, MAE = 0.9016862697054461
+
+FEATURE IMPORTANCE:
+- Top features: temp_category_Warm (0.489), temp_category_Hot (0.355), temp_category_Cool (0.132)
+- Top 3 features account for 97.7% of total importance
+
+TEMPORAL PATTERNS:
+- Daily (hour) and monthly cycles were used as temporal features and contribute to model performance (see feature importances).
+
+DATA QUALITY:
+- Dataset was cleaned in earlier steps (missing values handled, outliers capped via IQR method) as documented in Q2/Q3.
+- Predictions file rows (test set size): 39175
