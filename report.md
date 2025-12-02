@@ -122,8 +122,6 @@ I analyzed the **Chicago Beach Weather Sensors** dataset to explore temporal wea
 
 ## 4. Model results
 
-> **Note:** Replace the `TBD` cells below with exact numeric outputs from your run (you can compute them by running the Q7 notebook or reading `output/q7_model_metrics.txt`). I included a short code snippet below to compute these if needed.
-
 **Model performance table**
 
 | Model | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE |
