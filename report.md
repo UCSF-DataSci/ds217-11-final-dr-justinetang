@@ -11,7 +11,7 @@
 
 ## 1. Executive summary
 
-I analyzed the **Chicago Beach Weather Sensors** dataset to explore temporal weather patterns at Chicago lakefront stations and to build predictive models for **Air Temperature**. The main goal was to clean and wrangle the continuous sensor time series, create meaningful temporal/ rolling features, and evaluate predictive models (Linear Regression, Random Forest, XGBoost). Key finding (one sentence): **A tree-based model (XGBoost / Random Forest) outperformed linear regression in capturing seasonal and diurnal variability, with temporal features and wind/pressure-related predictors among the most important.**
+I analyzed the **Chicago Beach Weather Sensors** dataset to explore temporal weather patterns at Chicago lakefront stations and to build predictive models for **Air Temperature**. The main goal was to clean and wrangle the continuous sensor time series, create meaningful temporal/ rolling features, and evaluate predictive models (Linear Regression, XGBoost). Key finding (one sentence): **A tree-based model (XGBoost) outperformed linear regression in capturing seasonal and diurnal variability, with temporal features and wind/pressure-related predictors among the most important.**
 
 ---
 
@@ -148,7 +148,7 @@ Top 5 features (from `output/q7_feature_importance.csv`, sorted descending):
 - **MAE (mean absolute error):** average absolute error, robust to outliers relative to RMSE.
 
 **Model comparison & selection**  
-- If XGBoost (or Random Forest) shows higher R² and lower RMSE/MAE than Linear Regression, the tree-based model is preferred for prediction accuracy.  
+- If XGBoost shows higher R² and lower RMSE/MAE than Linear Regression, the tree-based model is preferred for prediction accuracy.  
 - Also compare train vs test metrics to diagnose overfitting: a large gap (train >> test) suggests overfitting and suggests more regularization or simpler models.
 
 ---
@@ -174,7 +174,7 @@ Top 5 features (from `output/q7_feature_importance.csv`, sorted descending):
 ## 6. Limitations & next steps
 
 **Limitations**
-- **Data quality:** Some sensors have substantial missingness (e.g., Wet Bulb / Rain fields). Forward/back-fill helps but can mask longer outages.  
+- **Data quality:** Some sensors have missing values (e.g., Wet Bulb / Rain fields), which may introduce bias.  
 - **Potential remaining leakage:** Although rolling windows of the target were avoided, careful review of feature correlation is necessary (features with >0.99 correlation to the target indicate leakage).  
 - **Station heterogeneity:** If station metadata is present, models could be improved by station-specific models or hierarchical modeling.
 
@@ -184,29 +184,5 @@ Top 5 features (from `output/q7_feature_importance.csv`, sorted descending):
 3. **Anomaly detection:** build a dedicated sensor-anomaly detector to flag and remove suspect readings before imputation.  
 4. **Model calibration and uncertainty:** provide prediction intervals (quantile regression forests, XGBoost quantile, or conformal prediction) for operational use.  
 5. **Station-specific modeling or hierarchical model** to capture local microclimate differences.
-
 ---
-
-## 7. Reproducibility & how to compute missing numbers
-
-To compute metrics (if you want to fill the `TBD` table automatically), run this snippet in your Python environment where `output/q7_predictions.csv` exists:
-
-```python
-import pandas as pd
-import numpy as np
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
-
-pred = pd.read_csv("output/q7_predictions.csv")
-models = [c for c in pred.columns if c.startswith("predicted_")]
-results = {}
-for m in models:
-    y_true = pred["actual"].values
-    y_pred = pred[m].values
-    results[m] = {
-        "R2": r2_score(y_true, y_pred),
-        "RMSE": np.sqrt(mean_squared_error(y_true, y_pred)),
-        "MAE": mean_absolute_error(y_true, y_pred)
-    }
-print(results)
-# Paste the numbers into the Model results table above.
 
